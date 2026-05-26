@@ -44,6 +44,7 @@ def _find_env_pattern(string: str) -> str:
 
 def _update_env(variables: dict) -> None:
     for key, value in variables.items():
+        print(f"{key}:[{value}]")
         _env_key = _find_env_pattern(value)
         if _env_key:
             variables[key] = os.getenv(_env_key, "")
