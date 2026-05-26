@@ -395,9 +395,10 @@ def main() -> None:
     if args.mode == "setup":
         variables = {}
         if args.variables_file:
-            print(args.variables_file)
+            print(f"v_fila:[{args.variables_file}]")
             conf_file = _check_file(args.variables_file)
             variables = _load_file(Path(conf_file))
+            print(f"v:[{variables}]")
             _update_env(variables)
 
         password = args.password or os.environ.get("ENVICORN_PASSWORD")
