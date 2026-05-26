@@ -397,7 +397,8 @@ def main() -> None:
         if args.variables_file:
             conf_file = _check_file(args.variables_file)
             variables = _load_file(Path(conf_file))
-            _update_env(variables)
+
+        _update_env(variables)
 
         password = args.password or os.environ.get("ENVICORN_PASSWORD")
         try:
